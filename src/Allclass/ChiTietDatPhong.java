@@ -52,8 +52,5 @@ public class ChiTietDatPhong {
          System.out.print("Ma phong : " + this.Maphong);
           System.out.println();
     }
-    public static void main(String[] args) {
-        ChiTietDatPhong c = new ChiTietDatPhong ("123","123");
-        c.showctdp();
-    }
+   
 }
