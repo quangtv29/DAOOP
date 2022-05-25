@@ -1,30 +1,34 @@
 package Connect;
-
-
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
-
-
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+/**
+ *
+ * @author giasutinhoc.vn
+ */
 public class ConnectDB {
-    
-    
-     public Connection getConnection()throws Exception {
-        String url = "jdbc:sqlserver://"+serverName+":"+portNumber + "\\" + instance +";databaseName="+dbName;
-        if(instance == null || instance.trim().isEmpty())
-            url = "jdbc:sqlserver://"+serverName+":"+portNumber +";databaseName="+dbName;
-        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        return DriverManager.getConnection(url, userID, password);
-    }   
-//      public String getImagePath() throws Exception {
-//        return "image/";
-//    }
-    /*Insert your other code right after this comment*/
-    /*Change/update information of your database connection, DO NOT change name of instance variables in this class*/
-    private final String serverName = "DESKTOP-K2CL5O2";
-    private final String dbName = "QUANLYKHACHSAN";
-    private final String portNumber = "1433";
-    private final String instance="";//
-    private final String userID = "sa";
-    private final String password = "123456";
+ public static void main(String[] args) {
+  try {
+    String dbURL = 
+"jdbc:sqlserver://localhost/1433;databaseName=QUANLYKHACHSAN;user=sa;password=sa";
+    Connection conn = DriverManager.getConnection(dbURL);
+    if (conn != null) {
+      System.out.println("Connected");
+      DatabaseMetaData dm = (DatabaseMetaData) 
+conn.getMetaData();
+      System.out.println("Driver name: " + 
+dm.getDriverName());
+System.out.println("Driver version: " + dm.getDriverVersion());
+      System.out.println("Product name: " + dm.getDatabaseProductName());
+      System.out.println("Product version: " + dm.getDatabaseProductVersion());
+    }
+   } catch (SQLException ex) {
+     System.err.println("Cannot connect database, " + ex);
+   }
+  }
 }
- 
+
+
