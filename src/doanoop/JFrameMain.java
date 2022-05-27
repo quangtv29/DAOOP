@@ -135,6 +135,11 @@ public class JFrameMain extends javax.swing.JFrame {
         jMenu6.add(jMenuItem8);
 
         jMenuItem9.setText("Hoá Đơn");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem9);
 
         jMenuBar2.add(jMenu6);
@@ -202,6 +207,12 @@ public class JFrameMain extends javax.swing.JFrame {
 		jPanel1.add(new QLKH(), BorderLayout.CENTER);
 		jPanel1.updateUI();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        jPanel1.removeAll();
+		jPanel1.add(new QLHD(), BorderLayout.CENTER);
+		jPanel1.updateUI();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     /**
      * @param args the command line arguments

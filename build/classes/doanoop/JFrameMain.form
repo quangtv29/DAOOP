@@ -80,6 +80,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ho&#xe1; &#x110;&#x1a1;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
